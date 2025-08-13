@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Surprise Birthday</title>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ดอกไม้พื้นหลัง -->
+<div id="flower-container"></div>
+
+<!-- ป็อปอัพแจ้งเตือน -->
+<div id="toast"></div>
+
+<!-- หน้า 1 -->
+<div class="page active" id="page1">
+    <img src="./noynah.jpg" alt="Person" class="curve-img" />
+    <button onclick="playClickSound(); nextPage()">เริ่มเลย!</button>
+</div>
+
+<!-- หน้า 2 (ล็อครหัส) -->
+<div class="page" id="page2">
+    <div class="password-box">
+        <img src="./lock.png" alt="Lock" class="lock-img" />
+        <p>🔒 ใส่รหัสผ่าน 4 หลัก</p>
+        <input type="password" id="password-input" maxlength="4" placeholder="----" />
+        <button onclick="checkPassword()">ยืนยัน</button>
+    </div>
+</div>
+
+<!-- หน้า 3 (จดหมายปิด) -->
+<div class="page" id="page3">
+    <div class="letter">
+        <img src="./gift.png" alt="จดหมาย" />
+    </div>
+    <button onclick="playClickSound(); nextPage()">ดูจดหมาย 👀</button>
+</div>
+
+<!-- หน้า 4 (ข้อความ) -->
+<div class="page" id="page4">
+    <div class="letter-open">
+        <div class="message-box">
+            <p>
+                ถึง... น้อยหน่า 💌<br>
+                มีเรื่องอยากบอก...
+            </p>
+        </div>
+    </div>
+    <button onclick="playClickSound(); nextPage()">ดูข้อความ</button>
+</div>
+
+<!-- หน้า 5 (สุดท้าย) -->
+<div class="page" id="page5">
+    <div class="final-message">
+        <div class="final-text-box">
+            <p>
+                HBD🎉🎂 ✨Noynah🎉<br />
+                <br />
+                HBD น้อยหน่าย้อนหลังอีกรอบน้าา 💖<br />
+                ไม่รู้ว่าจะให้ไรดี เอาเป็นว่าาา แสกนข้างล่างนี่เอาแล้วกันนะะ
+                ขอให้มีความสุขไม่เจ็บไม่ป่วยเงินไหลเข้าๆ ถ้ามีเยอะก็แบ่งหน่อยก็ดีนะะ -ิ -ิ <br/>
+                มีเรื่องไรอยากระบายก็ทักมาได้นะ รอซััพปอร์ตอยู่ห่างๆ
+            </p>
+        </div>
+        <img src="./final.png" alt="Final Gift" />
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

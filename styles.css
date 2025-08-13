@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: 'Itim', cursive;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+}
+
+/* ดอกไม้พื้นหลัง */
+#flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.flower {
+    position: absolute;
+    background-image: url("./flowerbg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ป็อปอัพแจ้งเตือน */
+#toast {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+}
+#toast.show {
+    top: 30px;
+    opacity: 1;
+}
+
+/* หน้า */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.9s ease, transform 0.6s ease;
+    z-index: 1;
+}
+
+.page.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* จดหมาย */
+.letter img {
+    width: 400px;
+}
+
+
+
+
+/* ปุ่ม */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff85a2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 3;
+}
+
+button:hover {
+    background-color: #ff4f7a;
+    transform: scale(1.05);
+}
+
+/* ขอบโค้งรูปหน้าแรก */
+.curve-img {
+    width: 300px;
+    clip-path: inset(0 round 20px);
+}
+
+/* กล่องรหัสผ่าน */
+.password-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffffbb;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.lock-img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.password-box input {
+    font-size: 24px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #ff85a2;
+    margin-bottom: 15px;
+}
+
+/* หน้า 5 กรอบข้อความและจัดกึ่งกลาง */
+.final-message img {
+    max-width: 50%;   /* ปรับขนาดไม่ให้เต็มจอ */
+    height: auto;     /* รักษาสัดส่วน */
+    border-radius: 15px;
+    margin-top: 20px; /* เว้นระยะจากกรอบข้อความ */
+}
+
+.final-text-box {
+    background: #ffffffcc;  /* สีพื้นหลังขาวทึบเล็กน้อย */
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: inline-block;
+    max-width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.message-box {
+    display: inline-block;
+    background: #ffffffcc;  /* พื้นหลังขาวโปร่งเล็กน้อย */
+    padding: 50px 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    text-size-adjust: 50px;
+}
